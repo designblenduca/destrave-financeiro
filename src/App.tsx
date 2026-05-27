@@ -121,7 +121,7 @@ function Hero() {
       <div className="hero-mobile-header" aria-hidden="true">
         <img
           className="hero-mobile-logo"
-          src="/destrave-logo.png"
+          src={`${import.meta.env.BASE_URL}destrave-logo.png`}
           alt="Destrave Financeiro"
         />
       </div>
@@ -138,7 +138,7 @@ function Hero() {
           {/* Logo visible only on desktop */}
           <img
             className="hero-logo desktop-only-logo"
-            src="/destrave-logo.png"
+            src={`${import.meta.env.BASE_URL}destrave-logo.png`}
             alt="Destrave Financeiro"
           />
           <div className="micro-badge">
@@ -173,7 +173,7 @@ function Hero() {
         </motion.div>
         {/* Empty container visible only on desktop */}
         <div className="hero-empty desktop-only-empty" aria-hidden="true">
-          <img src="/hero-luana.png" alt="" />
+          <img src={`${import.meta.env.BASE_URL}hero-luana.png`} alt="" />
         </div>
       </div>
     </section>
@@ -344,7 +344,7 @@ function LuanaSection() {
       <div className="container luana-grid">
         <Reveal className="luana-photo">
           <div className="photo-frame">
-            <img src="/foto-luana.png" alt="Luana Carraro" />
+            <img src={`${import.meta.env.BASE_URL}foto-luana.png`} alt="Luana Carraro" />
           </div>
         </Reveal>
         <Reveal className="luana-copy">
@@ -502,7 +502,7 @@ function Footer() {
         <div className="footer-signature">
           <img
             className="footer-logo"
-            src="/destrave-logo.png"
+            src={`${import.meta.env.BASE_URL}destrave-logo.png`}
             alt="Destrave Financeiro"
           />
           <p className="footer-copyright">

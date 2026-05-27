@@ -2181,7 +2181,7 @@ li,
     position: absolute;
     inset: 0 0 auto 0;
     height: clamp(24rem, 58svh, 40rem);
-    background-image: url('/hero-mobile.png');
+    background-image: url('../public/hero-mobile.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
