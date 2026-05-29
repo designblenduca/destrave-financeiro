@@ -125,7 +125,11 @@ function Hero() {
           alt="Destrave Financeiro"
         />
       </div>
-      <div className="hero-visual" aria-hidden="true" />
+      <div
+        className="hero-visual"
+        aria-hidden="true"
+        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}hero-mobile.png')` }}
+      />
 
       <div className="hero-texture" aria-hidden="true" />
       <div className="hero-grid">
