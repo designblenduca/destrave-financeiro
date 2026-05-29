@@ -2152,6 +2152,16 @@ li,
   }
 }
 
+.testimonial-phrase {
+  font-family: Fraunces, Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--brand-ink, #243240);
+  margin: 0 0 1.25rem;
+}
+
 /* ==========================================
    MOBILE & TABLET ADJUSTMENTS
    ========================================== */

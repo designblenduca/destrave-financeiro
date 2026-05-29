@@ -43,14 +43,22 @@ export const pain = {
 
 export const testimonials = [
   {
+    name: "Fernanda Ciello",
+    phrase: "Finanças de forma leve e com clareza imediata",
     quote:
-      "Depois do Destrave, finalmente consegui separar minha conta pessoal da empresa...",
-    role: "Empresária",
+      "Eu nunca tinha feito uma aula sobre finanças tão leve. Sempre tive dificuldades de olhar para o financeiro por ter um perfil impulsivo, mas as ferramentas me trouxeram clareza sobre o meu momento atual. Super recomendo o trabalho, pois vai muito além dos números.",
   },
   {
+    name: "Silmara Xavier",
+    phrase: "Um divisor de águas para o crescimento da empresa",
     quote:
-      "A clareza que o método da Luana traz é surreal, recomendo para todo empresário.",
-    role: "Profissional liberal",
+      "Entendi que não existe crescimento real sem controle financeiro. Essa aula foi um divisor de águas e me provou que finanças não são apenas números, mas sim consciência e visão de futuro. Tive uma mudança de mentalidade: prosperidade é gestão, disciplina e decisão.",
+  },
+  {
+    name: "Priscilla Ayres",
+    phrase: "Conteúdo prático, sem termos difíceis e com resultados",
+    quote:
+      "Foi a primeira vez que ouvi sobre finanças de forma tão leve, clara e objetiva, sem termos difíceis. Amei as planilhas e o suporte recebido. Já coloquei a organização em prática e a diferença para entender as contas e visualizar metas é notória.",
   },
 ];
 

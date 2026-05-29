@@ -243,13 +243,14 @@ function TestimonialsSection() {
             <Reveal
               className={`testimonial-card testimonial-card-${index + 1}`}
               delay={index * 0.08}
-              key={testimonial.quote}
+              key={testimonial.name}
             >
+              <h3 className="testimonial-phrase">“{testimonial.phrase}”</h3>
               <div className="testimonial-top">
-                <div className="avatar">{testimonial.role.slice(0, 1)}</div>
+                <div className="avatar">{testimonial.name.slice(0, 1)}</div>
                 <div>
                   <span>Aluna Destrave</span>
-                  <strong>{testimonial.role}</strong>
+                  <strong>{testimonial.name}</strong>
                   <div className="stars" aria-label="Avaliação cinco estrelas">
                     {Array.from({ length: 5 }).map((_, starIndex) => (
                       <Star
