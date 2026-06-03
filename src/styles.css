@@ -1309,16 +1309,20 @@ footer {
     display: flex;
   }
 
-  .testimonial-card-1 {
+  .testimonial-card-1,
+  .testimonial-card-3 {
     transform: rotate(-0.45deg);
   }
 
-  .testimonial-card-2 {
+  .testimonial-card-2,
+  .testimonial-card-4 {
     transform: translateY(1.2rem) rotate(0.45deg);
   }
 
   .testimonial-card-1:hover,
-  .testimonial-card-2:hover {
+  .testimonial-card-2:hover,
+  .testimonial-card-3:hover,
+  .testimonial-card-4:hover {
     transform: translateY(-4px) rotate(0deg);
   }
 }
@@ -2633,7 +2637,9 @@ footer {
   }
 
   .testimonial-card-1,
-  .testimonial-card-2 {
+  .testimonial-card-2,
+  .testimonial-card-3,
+  .testimonial-card-4 {
     transform: none !important;
   }
 

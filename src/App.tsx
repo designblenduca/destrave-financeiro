@@ -240,7 +240,7 @@ function TestimonialsSection() {
         <SectionHeader
           align="center"
           eyebrow="Prova social"
-          title="O que dizem as empresárias que já destravaram:"
+          title="O que dizem os empresários que já destravaram:"
         />
         <div className="testimonial-grid">
           {testimonials.map((testimonial, index) => (
@@ -253,7 +253,7 @@ function TestimonialsSection() {
               <div className="testimonial-top">
                 <div className="avatar">{testimonial.name.slice(0, 1)}</div>
                 <div>
-                  <span>Aluna Destrave</span>
+                  <span>{testimonial.label}</span>
                   <strong>{testimonial.name}</strong>
                   <div className="stars" aria-label="Avaliação cinco estrelas">
                     {Array.from({ length: 5 }).map((_, starIndex) => (

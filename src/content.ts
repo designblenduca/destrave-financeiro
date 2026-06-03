@@ -44,21 +44,31 @@ export const pain = {
 export const testimonials = [
   {
     name: "Fernanda Ciello",
+    label: "Aluna Destrave",
     phrase: "Finanças de forma leve e com clareza imediata",
     quote:
       "Eu nunca tinha feito uma aula sobre finanças tão leve. Sempre tive dificuldades de olhar para o financeiro por ter um perfil impulsivo, mas as ferramentas me trouxeram clareza sobre o meu momento atual. Super recomendo o trabalho, pois vai muito além dos números.",
   },
   {
     name: "Silmara Xavier",
+    label: "Aluna Destrave",
     phrase: "Um divisor de águas para o crescimento da empresa",
     quote:
       "Entendi que não existe crescimento real sem controle financeiro. Essa aula foi um divisor de águas e me provou que finanças não são apenas números, mas sim consciência e visão de futuro. Tive uma mudança de mentalidade: prosperidade é gestão, disciplina e decisão.",
   },
   {
     name: "Priscilla Ayres",
+    label: "Aluna Destrave",
     phrase: "Conteúdo prático, sem termos difíceis e com resultados",
     quote:
       "Foi a primeira vez que ouvi sobre finanças de forma tão leve, clara e objetiva, sem termos difíceis. Amei as planilhas e o suporte recebido. Já coloquei a organização em prática e a diferença para entender as contas e visualizar metas é notória.",
+  },
+  {
+    name: "Ian Paz",
+    label: "Aluno Destrave",
+    phrase: "Uma relação mais saudável com o dinheiro e escolhas conscientes",
+    quote:
+      "Compreendi que organizar o dinheiro vai além de planilhas, trata-se de uma relação psicológica mais saudável. Percebi que o problema não se resolve apenas ganhando mais, mas sim olhando com consciência para o que temos, entendendo nossos padrões e tomando decisões com clareza.",
   },
 ];
 
