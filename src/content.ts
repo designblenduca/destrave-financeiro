@@ -119,26 +119,52 @@ export const fit = {
 };
 
 export const luana = {
-  bio: "Entusiasta do universo das finanças! Me tornei Mentora e Consultora Financeira após descobrir que conhecimento liberta e transforma! Entendi que meu propósito de vida estava em levar esse conhecimento e transformar a mentalidade e a vida financeira das pessoas mundo afora!",
-  specialty:
-    "ESPECIALISTA EM EDUCAÇÃO FINANCEIRA, FINANÇAS, INVESTIMENTOS E BANKING E FINANÇAS COMPORTAMENTAIS.",
-  book:
-    "COAUTORA DA OBRA ‘QUAIS DE MIM VOCÊ PROCURA?’ – Mulheres no Digital e Mulheres nas Finanças.",
+  bio: "Consultora e Mentora Financeira especializada em empresários que faturam bem e não veem o dinheiro sobrar.\n\nNos últimos 5 anos, conduziu mais de 250 mentorias e processos de consultoria financeira, ajudando profissionais e empresários a deixarem o modo sobrevivência para trás.\n\nEspecialista em Educação Financeira, Finanças Comportamentais e Banking.\n\nCoautora da obra Quais de Mim Você Procura.",
+  specialty: "",
+  book: "",
   stats:
-    "+ de 200 mentorias | + 5 anos guiando profissionas e pessoas a conquistarem seus sonhos.",
+    "+ de 250 mentorias | + 5 anos guiando profissionais e empresas a deixarem o modo sobrevivência para trás.",
 };
 
 export const offer = {
   title: "Assuma o controle do seu negócio hoje.",
-  includes: [
-    "Acesso imediato às aulas gravadas (assista onde e quando quiser).",
-    "Ferramentas práticas para aplicação imediata.",
-    "Metodologia validada por centenas de alunos.",
-  ],
-  priceEyebrow: "DE R$ XXX POR APENAS",
+  priceEyebrow: "Hoje você investe apenas:",
   installment: "12x de R$ XX,XX",
   cash: "ou R$ XXX,00 à vista",
   cta: "QUERO COMEÇAR AGORA",
+  valueStack: [
+    {
+      title: "Curso Destrave Financeiro para Empresas",
+      subtitle: "O método completo para organizar o financeiro do seu CNPJ.",
+      originalPrice: "R$ 197",
+      isBonus: false,
+    },
+    {
+      title: "📊 Metodologia Destrave Financeiro para Empresas",
+      subtitle: "Apostila digital detalhada com o método passo a passo.",
+      originalPrice: "R$ 197",
+      isBonus: true,
+    },
+    {
+      title: "📈 Planilha de Acompanhamento Financeiro",
+      subtitle: "A ferramenta pronta para controle de caixa e visualização de lucros.",
+      originalPrice: "R$ 37",
+      isBonus: true,
+    },
+    {
+      title: "🧮 Calculadora de Pró-Labore",
+      subtitle: "Para definir seu salário ideal sem drenar o caixa da empresa.",
+      originalPrice: "R$ 37",
+      isBonus: true,
+    },
+    {
+      title: "📋 Checklist da Rotina Financeira Lucrativa",
+      subtitle: "O passo a passo diário, semanal e mensal para manter a organização.",
+      originalPrice: "R$ 37",
+      isBonus: true,
+    },
+  ],
+  totalOriginalValue: "R$ 308",
 };
 
 export const guarantee = {
@@ -170,7 +196,7 @@ export const faqs = [
 
 export const credibilityBadges = [
   { label: "Especialista em Educação Financeira", icon: BadgeCheck },
-  { label: "+ de 200 mentorias", icon: BriefcaseBusiness },
+  { label: "+ de 250 mentorias", icon: BriefcaseBusiness },
   { label: "Finanças, Investimentos e Banking", icon: BarChart3 },
 ];
 

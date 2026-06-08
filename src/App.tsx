@@ -157,7 +157,9 @@ function Hero() {
           </h1>
           <p>{hero.subheadline}</p>
           <div className="hero-actions">
-            <PrimaryButton onClick={scrollToOffer}>{hero.cta}</PrimaryButton>
+            <PrimaryButton checkout href={checkoutUrl}>
+              {hero.cta}
+            </PrimaryButton>
           </div>
           <div className="hero-proof" aria-label="Credenciais">
             {credibilityBadges.map((badge) => {
@@ -338,6 +340,11 @@ function FitSection() {
             ))}
           </Reveal>
         </div>
+        <Reveal className="fit-actions" delay={0.12}>
+          <PrimaryButton checkout href={checkoutUrl}>
+            QUERO DESTRAVAR MINHA EMPRESA AGORA
+          </PrimaryButton>
+        </Reveal>
       </div>
     </section>
   );
@@ -355,11 +362,13 @@ function LuanaSection() {
         <Reveal className="luana-copy">
           <p className="eyebrow">Quem é Luana Carraro</p>
           <h2>Quem vai te guiar nessa jornada:</h2>
-          <p>{luana.bio}</p>
-          <div className="credential-stack">
-            <div>{luana.specialty}</div>
-            <div>{luana.book}</div>
-          </div>
+          <p style={{ whiteSpace: "pre-line" }}>{luana.bio}</p>
+          { (luana.specialty || luana.book) ? (
+            <div className="credential-stack">
+              {luana.specialty && <div>{luana.specialty}</div>}
+              {luana.book && <div>{luana.book}</div>}
+            </div>
+          ) : null }
           <div className="luana-human-note">
             “Conhecimento liberta e transforma!”
           </div>
@@ -378,21 +387,42 @@ function OfferSection() {
         <Reveal className="offer-copy">
           <p className="eyebrow">A oferta</p>
           <h2>{offer.title}</h2>
-          <p>Ao se inscrever no Curso Destrave Financeiro, você recebe:</p>
-          <div className="offer-list">
-            {offer.includes.map((item) => (
-              <div className="fit-row" key={item}>
-                <CheckIcon className="h-5 w-5" />
-                <p>{item}</p>
+          <p className="offer-subtitle">Ao se inscrever hoje, você recebe o método completo e todos os bônus:</p>
+          
+          <div className="value-stack">
+            {offer.valueStack ? offer.valueStack.map((item) => (
+              <div className={`value-card ${item.isBonus ? "bonus" : "core"}`} key={item.title}>
+                <div className="value-card-info">
+                  <div className="value-card-header">
+                    {item.isBonus && <span className="bonus-tag">BÔNUS EXCLUSIVO</span>}
+                    <h4>{item.title}</h4>
+                  </div>
+                  <p>{item.subtitle}</p>
+                </div>
+                <div className="value-card-price">
+                  {item.isBonus ? (
+                    <>
+                      <span className="price-slashed">{item.originalPrice}</span>
+                      <span className="price-free">GRÁTIS</span>
+                    </>
+                  ) : (
+                    <span className="price-included">Incluso</span>
+                  )}
+                </div>
               </div>
-            ))}
+            )) : null}
           </div>
         </Reveal>
+        
         <Reveal className="price-card" delay={0.08}>
           <div className="decision-label">Momento da decisão</div>
+          <div className="price-total-original">
+            <span>Valor Total:</span>
+            <span className="price-slashed-total">{offer.totalOriginalValue}</span>
+          </div>
           <div className="price-eyebrow">{offer.priceEyebrow}</div>
           <div className="price">{offer.installment}</div>
-          <p>{offer.cash}</p>
+          <p className="price-cash">{offer.cash}</p>
           <PrimaryButton checkout href={checkoutUrl}>
             {offer.cta}
           </PrimaryButton>
@@ -437,9 +467,16 @@ function FaqSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="section-pad faq-section">
+    <section className="section-pad faq-section" id="faq">
       <div className="container faq-grid">
-        <SectionHeader eyebrow="Dúvidas frequentes" title="FAQ" />
+        <Reveal className="faq-info">
+          <p className="eyebrow">Dúvidas frequentes</p>
+          <h2>FAQ</h2>
+          <h3 className="faq-subtitle">Ainda com dúvidas?</h3>
+          <p className="faq-lead-text">
+            As perguntas abaixo respondem os principais pontos antes de iniciar sua jornada financeira.
+          </p>
+        </Reveal>
         <div className="faq-list">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
@@ -493,7 +530,7 @@ function Footer() {
             financeiro da sua empresa com clareza, estratégia e lucro.
           </p>
           <div className="footer-cta-wrap">
-            <PrimaryButton onClick={scrollToOffer}>
+            <PrimaryButton checkout href={checkoutUrl}>
               QUERO DESTRAVAR MEU LUCRO AGORA
             </PrimaryButton>
           </div>
@@ -524,10 +561,10 @@ export default function App() {
     <>
       <Hero />
       <PainSection />
-      <TestimonialsSection />
       <PillarsSection />
       <FitSection />
       <LuanaSection />
+      <TestimonialsSection />
       <OfferSection />
       <GuaranteeSection />
       <FaqSection />
