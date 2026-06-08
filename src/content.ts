@@ -119,11 +119,26 @@ export const fit = {
 };
 
 export const luana = {
-  bio: "Consultora e Mentora Financeira especializada em empresários que faturam bem e não veem o dinheiro sobrar.\n\nNos últimos 5 anos, conduziu mais de 250 mentorias e processos de consultoria financeira, ajudando profissionais e empresários a deixarem o modo sobrevivência para trás.\n\nEspecialista em Educação Financeira, Finanças Comportamentais e Banking.\n\nCoautora da obra Quais de Mim Você Procura.",
-  specialty: "",
-  book: "",
-  stats:
-    "+ de 250 mentorias | + 5 anos guiando profissionais e empresas a deixarem o modo sobrevivência para trás.",
+  bio: "Consultora e Mentora Financeira especializada em empresários que faturam bem e não veem o dinheiro sobrar.",
+  stats: "+ de 250 mentorias | + 5 anos guiando profissionais e empresários",
+  highlights: [
+    {
+      title: "Experiência",
+      description: "Nos últimos 5 anos, conduziu mais de 250 mentorias e processos de consultoria financeira.",
+    },
+    {
+      title: "Especializações",
+      description: "Especialista em Educação Financeira, Finanças Comportamentais e Banking.",
+    },
+    {
+      title: "Resultados",
+      description: "Ajudou centenas de profissionais e empresários a deixarem o modo sobrevivência para trás.",
+    },
+    {
+      title: "Obra Publicada",
+      description: "Coautora da obra Quais de Mim Você Procura (Mulheres nas Finanças).",
+    },
+  ],
 };
 
 export const offer = {
@@ -140,25 +155,25 @@ export const offer = {
       isBonus: false,
     },
     {
-      title: "📊 Metodologia Destrave Financeiro para Empresas",
+      title: "Metodologia Destrave Financeiro para Empresas",
       subtitle: "Apostila digital detalhada com o método passo a passo.",
       originalPrice: "R$ 197",
       isBonus: true,
     },
     {
-      title: "📈 Planilha de Acompanhamento Financeiro",
+      title: "Planilha de Acompanhamento Financeiro",
       subtitle: "A ferramenta pronta para controle de caixa e visualização de lucros.",
       originalPrice: "R$ 37",
       isBonus: true,
     },
     {
-      title: "🧮 Calculadora de Pró-Labore",
+      title: "Calculadora de Pró-Labore",
       subtitle: "Para definir seu salário ideal sem drenar o caixa da empresa.",
       originalPrice: "R$ 37",
       isBonus: true,
     },
     {
-      title: "📋 Checklist da Rotina Financeira Lucrativa",
+      title: "Checklist da Rotina Financeira Lucrativa",
       subtitle: "O passo a passo diário, semanal e mensal para manter a organização.",
       originalPrice: "R$ 37",
       isBonus: true,

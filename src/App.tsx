@@ -8,9 +8,23 @@ import {
   Quote,
   ShieldCheck,
   Star,
+  Search,
+  ShieldAlert,
+  HelpCircle,
+  Briefcase,
+  Award,
+  BookOpen,
+  TrendingUp,
+  Calculator,
+  CheckSquare,
+  Shield,
+  Zap,
+  Play,
+  Check,
+  X,
+  Plus,
 } from "lucide-react";
 import {
-  checkIcon as CheckIcon,
   checkoutUrl,
   compactBadges,
   credibilityBadges,
@@ -23,7 +37,6 @@ import {
   pain,
   pillars,
   testimonials,
-  xIcon as XIcon,
 } from "./content";
 
 type RevealProps = {
@@ -116,120 +129,120 @@ function PrimaryButton({
 
 function Hero() {
   return (
-    <section className="hero-section" id="top">
-      {/* Mobile-only header logo and visual background block */}
-      <div className="hero-mobile-header" aria-hidden="true">
+    <section className="hero" id="top">
+      <div className="hero-overlay" aria-hidden="true" />
+
+      <motion.div
+        className="hero-content"
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      >
         <img
-          className="hero-mobile-logo"
+          className="hero-logo"
           src={`${import.meta.env.BASE_URL}destrave-logo.png`}
           alt="Destrave Financeiro"
         />
-      </div>
-      <div
-        className="hero-visual"
-        aria-hidden="true"
-        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}hero-mobile.png')` }}
-      />
-
-      <div className="hero-texture" aria-hidden="true" />
-      <div className="hero-grid">
-        <motion.div
-          className="hero-copy"
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
-          {/* Logo visible only on desktop */}
-          <img
-            className="hero-logo desktop-only-logo"
-            src={`${import.meta.env.BASE_URL}destrave-logo.png`}
-            alt="Destrave Financeiro"
-          />
-          <div className="micro-badge">
-            <ShieldCheck className="h-4 w-4" />
-            <span>Especialista em Educação Financeira</span>
-          </div>
-          <h1 aria-label={hero.headline}>
-            <span className="hero-line">Destrave o financeiro</span>
-            <span className="hero-line">da sua empresa</span>
-            <span className="hero-line">e assuma o controle</span>
-            <span className="hero-line">do seu lucro em 2026.</span>
-          </h1>
-          <p>{hero.subheadline}</p>
-          <div className="hero-actions">
-            <PrimaryButton checkout href={checkoutUrl}>
-              {hero.cta}
-            </PrimaryButton>
-          </div>
-          <div className="hero-proof" aria-label="Credenciais">
-            {credibilityBadges.map((badge) => {
-              const Icon = badge.icon;
-              return (
-                <span key={badge.label}>
-                  <Icon className="h-4 w-4" />
-                  {badge.label}
-                </span>
-              );
-            })}
-          </div>
-          <div className="hero-editorial-note" aria-hidden="true">
-            <span>01</span>
-            <p>caixa, lucro e decisão caminhando na mesma direção</p>
-          </div>
-        </motion.div>
-        {/* Empty container visible only on desktop */}
-        <div className="hero-empty desktop-only-empty" aria-hidden="true">
-          <img src={`${import.meta.env.BASE_URL}hero-luana.png`} alt="" />
+        
+        <div className="micro-badge">
+          <ShieldCheck className="h-4 w-4" />
+          <span>Especialista em Educação Financeira</span>
         </div>
+
+        <h1 aria-label={hero.headline}>
+          Destrave o financeiro <span>da sua empresa</span> e assuma o controle do seu lucro em 2026.
+        </h1>
+
+        <p className="hero-subtitle">
+          {hero.subheadline}
+        </p>
+
+        <div className="hero-actions">
+          <PrimaryButton checkout href={checkoutUrl}>
+            {hero.cta}
+          </PrimaryButton>
+        </div>
+
+        <div className="hero-proof" aria-label="Credenciais">
+          {credibilityBadges.map((badge) => {
+            const Icon = badge.icon;
+            return (
+              <span key={badge.label}>
+                <Icon className="h-4 w-4" />
+                {badge.label}
+              </span>
+            );
+          })}
+        </div>
+      </motion.div>
+
+      <div className="hero-image" aria-hidden="true">
+        <img src={`${import.meta.env.BASE_URL}hero-luana.png`} alt="Luana Carraro" />
       </div>
     </section>
   );
 }
 
 function PainSection() {
-  const emphasizedPain = [
-    <>
-      Não sabe exatamente <mark>para onde o dinheiro vai</mark>.
-    </>,
-    <>
-      Vive na insegurança de não saber quanto terá em caixa no mês seguinte.
-    </>,
-    <>
-      Não faz ideia se o mês fechou com <mark>lucro ou prejuízo real</mark>.
-    </>,
+  const painCards = [
+    {
+      icon: Search,
+      num: "01",
+      text: "Não sabe exatamente para onde o dinheiro vai.",
+    },
+    {
+      icon: ShieldAlert,
+      num: "02",
+      text: "Vive na insegurança de não saber quanto terá em caixa.",
+    },
+    {
+      icon: HelpCircle,
+      num: "03",
+      text: "Não faz ideia se o negócio realmente gera lucro.",
+    },
   ];
 
   return (
     <section className="section-pad pain-section" id="problema">
       <div className="container editorial-grid">
-        <SectionHeader
-          eyebrow="O problema"
-          title={
-            <>
-              <span className="section-title-line">O dinheiro entra.</span>
-              <span className="section-title-line">A clareza ainda não.</span>
-            </>
-          }
-          body={pain.intro}
-        />
-        <Reveal className="pain-panel">
-          <p className="pain-lead">{pain.lead}</p>
-          <div className="pain-list">
-            {pain.bullets.map((item, index) => (
-              <div className="pain-item" key={item}>
-                <span />
-                <p>{emphasizedPain[index]}</p>
-              </div>
-            ))}
-          </div>
-          <div className="pain-tags" aria-label="Pontos de identificação">
-            <span>Não sabe para onde o dinheiro vai</span>
-            <span>Vive apagando incêndios</span>
-            <span>Não sabe se teve lucro</span>
-          </div>
-          <p>{pain.closing}</p>
-          <div className="editorial-callout">{pain.bridge}</div>
-        </Reveal>
+        <div className="pain-left-content">
+          <SectionHeader
+            eyebrow="O problema"
+            title={
+              <>
+                <span className="section-title-line">O dinheiro entra.</span>
+                <span className="section-title-line">A clareza ainda não.</span>
+              </>
+            }
+            body={pain.intro}
+          />
+          <Reveal className="pain-narrative">
+            <p className="pain-lead">{pain.lead}</p>
+            <div className="editorial-callout">{pain.bridge}</div>
+            <p className="pain-closing">{pain.closing}</p>
+          </Reveal>
+        </div>
+        
+        <div className="pain-cards-stack">
+          {painCards.map((card, index) => {
+            const Icon = card.icon;
+            return (
+              <Reveal
+                className={`pain-card pain-card-${index + 1}`}
+                delay={index * 0.08}
+                key={card.num}
+              >
+                <div className="pain-card-header">
+                  <span className="pain-card-num">{card.num}</span>
+                  <div className="pain-card-icon-wrap">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                </div>
+                <p className="pain-card-text">{card.text}</p>
+              </Reveal>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
@@ -251,25 +264,31 @@ function TestimonialsSection() {
               delay={index * 0.08}
               key={testimonial.name}
             >
-              <h3 className="testimonial-phrase">“{testimonial.phrase}”</h3>
-              <div className="testimonial-top">
-                <div className="avatar">{testimonial.name.slice(0, 1)}</div>
-                <div>
-                  <span>{testimonial.label}</span>
-                  <strong>{testimonial.name}</strong>
-                  <div className="stars" aria-label="Avaliação cinco estrelas">
-                    {Array.from({ length: 5 }).map((_, starIndex) => (
-                      <Star
-                        className="h-3.5 w-3.5"
-                        fill="currentColor"
-                        key={starIndex}
-                      />
-                    ))}
+              <div className="testimonial-header">
+                <div className="testimonial-profile">
+                  <div className="avatar">{testimonial.name.slice(0, 1)}</div>
+                  <div className="profile-info">
+                    <strong>{testimonial.name}</strong>
+                    <span>{testimonial.label}</span>
                   </div>
                 </div>
+                <div className="stars" aria-label="Avaliação cinco estrelas">
+                  {Array.from({ length: 5 }).map((_, starIndex) => (
+                    <Star
+                      className="h-3 w-3 star-icon"
+                      fill="currentColor"
+                      key={starIndex}
+                    />
+                  ))}
+                </div>
               </div>
-              <Quote className="quote-icon h-7 w-7" />
-              <p>“{testimonial.quote}”</p>
+              
+              <div className="testimonial-divider" />
+              
+              <div className="testimonial-body">
+                <h3 className="testimonial-phrase">“{testimonial.phrase}”</h3>
+                <p className="testimonial-quote">“{testimonial.quote}”</p>
+              </div>
             </Reveal>
           ))}
         </div>
@@ -295,11 +314,13 @@ function PillarsSection() {
                 delay={index * 0.06}
                 key={pillar.title}
               >
-                <div className="pillar-number">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
-                <div className="pillar-icon">
-                  <Icon className="h-5 w-5" />
+                <div className="pillar-card-header">
+                  <div className="pillar-icon">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <span className="pillar-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                 </div>
                 <h3>{pillar.title}</h3>
                 <p>{pillar.description}</p>
@@ -314,30 +335,46 @@ function PillarsSection() {
 
 function FitSection() {
   return (
-    <section className="section-pad compact-section fit-section">
+    <section className="section-pad compact-section fit-section" id="diagnostico">
       <div className="container">
         <SectionHeader
-          eyebrow="Para quem é / não é"
+          align="center"
+          eyebrow="Para quem é"
           title="Clareza para decidir se este é o seu momento."
         />
         <div className="fit-grid">
           <Reveal className="fit-card positive">
-            <h3>Este curso é para você que:</h3>
-            {fit.yes.map((item) => (
-              <div className="fit-row" key={item}>
-                <CheckIcon className="h-5 w-5" />
-                <p>{item}</p>
+            <div className="fit-card-header">
+              <div className="fit-icon-badge positive">
+                <Check className="h-5 w-5" />
               </div>
-            ))}
+              <h3>Ideal para você</h3>
+            </div>
+            <div className="fit-rows">
+              {fit.yes.map((item) => (
+                <div className="fit-row" key={item}>
+                  <Check className="h-4 w-4 fit-row-icon" />
+                  <p>{item}</p>
+                </div>
+              ))}
+            </div>
           </Reveal>
+          
           <Reveal className="fit-card negative" delay={0.08}>
-            <h3>Este curso NÃO é para você que:</h3>
-            {fit.no.map((item) => (
-              <div className="fit-row" key={item}>
-                <XIcon className="h-5 w-5" />
-                <p>{item}</p>
+            <div className="fit-card-header">
+              <div className="fit-icon-badge negative">
+                <X className="h-5 w-5" />
               </div>
-            ))}
+              <h3>Não é para você</h3>
+            </div>
+            <div className="fit-rows">
+              {fit.no.map((item) => (
+                <div className="fit-row" key={item}>
+                  <X className="h-4 w-4 fit-row-icon" />
+                  <p>{item}</p>
+                </div>
+              ))}
+            </div>
           </Reveal>
         </div>
         <Reveal className="fit-actions" delay={0.12}>
@@ -351,35 +388,60 @@ function FitSection() {
 }
 
 function LuanaSection() {
+  const luanaIcons = [Briefcase, Award, TrendingUp, BookOpen];
+
   return (
     <section className="section-pad luana-section" id="luana">
       <div className="container luana-grid">
-        <Reveal className="luana-photo">
-          <div className="photo-frame">
-            <img src={`${import.meta.env.BASE_URL}foto-luana.png`} alt="Luana Carraro" />
-          </div>
-        </Reveal>
-        <Reveal className="luana-copy">
-          <p className="eyebrow">Quem é Luana Carraro</p>
-          <h2>Quem vai te guiar nessa jornada:</h2>
-          <p style={{ whiteSpace: "pre-line" }}>{luana.bio}</p>
-          { (luana.specialty || luana.book) ? (
-            <div className="credential-stack">
-              {luana.specialty && <div>{luana.specialty}</div>}
-              {luana.book && <div>{luana.book}</div>}
+        <Reveal className="luana-photo-wrap">
+          <div className="editorial-photo-container">
+            <div className="editorial-frame-backdrop" />
+            <div className="editorial-frame">
+              <img src={`${import.meta.env.BASE_URL}foto-luana.png`} alt="Luana Carraro" />
             </div>
-          ) : null }
-          <div className="luana-human-note">
-            “Conhecimento liberta e transforma!”
+            <div className="editorial-frame-accent" />
           </div>
-          <div className="stat-strip">{luana.stats}</div>
         </Reveal>
+        
+        <div className="luana-copy-wrap">
+          <Reveal className="luana-header">
+            <p className="eyebrow">Quem é Luana Carraro</p>
+            <h2>Quem vai te guiar nessa jornada:</h2>
+            <p className="luana-bio-text">{luana.bio}</p>
+          </Reveal>
+          
+          <div className="luana-highlights-grid">
+            {luana.highlights ? luana.highlights.map((highlight, index) => {
+              const Icon = luanaIcons[index];
+              return (
+                <Reveal
+                  className={`luana-highlight-card highlight-card-${index + 1}`}
+                  delay={index * 0.06}
+                  key={highlight.title}
+                >
+                  <div className="highlight-icon-wrap">
+                    <Icon className="h-4 w-4" />
+                  </div>
+                  <h4>{highlight.title}</h4>
+                  <p>{highlight.description}</p>
+                </Reveal>
+              );
+            }) : null}
+          </div>
+          
+          <Reveal className="luana-quote-strip">
+            <Quote className="h-5 w-5 quote-icon" />
+            <p>“Conhecimento liberta e transforma!”</p>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
 }
 
 function OfferSection() {
+  const offerIcons = [BookOpen, Award, TrendingUp, Calculator, CheckSquare];
+
   return (
     <section className="section-pad offer-section" id="oferta">
       <div className="offer-atmosphere" aria-hidden="true" />
@@ -390,27 +452,33 @@ function OfferSection() {
           <p className="offer-subtitle">Ao se inscrever hoje, você recebe o método completo e todos os bônus:</p>
           
           <div className="value-stack">
-            {offer.valueStack ? offer.valueStack.map((item) => (
-              <div className={`value-card ${item.isBonus ? "bonus" : "core"}`} key={item.title}>
-                <div className="value-card-info">
-                  <div className="value-card-header">
-                    {item.isBonus && <span className="bonus-tag">BÔNUS EXCLUSIVO</span>}
-                    <h4>{item.title}</h4>
+            {offer.valueStack ? offer.valueStack.map((item, index) => {
+              const Icon = offerIcons[index];
+              return (
+                <div className={`value-card ${item.isBonus ? "bonus" : "core"}`} key={item.title}>
+                  <div className="value-card-icon-wrap">
+                    <Icon className="h-5 w-5" />
                   </div>
-                  <p>{item.subtitle}</p>
+                  <div className="value-card-info">
+                    <div className="value-card-header">
+                      {item.isBonus && <span className="bonus-tag">BÔNUS EXCLUSIVO</span>}
+                      <h4>{item.title}</h4>
+                    </div>
+                    <p>{item.subtitle}</p>
+                  </div>
+                  <div className="value-card-price">
+                    {item.isBonus ? (
+                      <>
+                        <span className="price-slashed">{item.originalPrice}</span>
+                        <span className="price-free">GRÁTIS</span>
+                      </>
+                    ) : (
+                      <span className="price-included">Incluso</span>
+                    )}
+                  </div>
                 </div>
-                <div className="value-card-price">
-                  {item.isBonus ? (
-                    <>
-                      <span className="price-slashed">{item.originalPrice}</span>
-                      <span className="price-free">GRÁTIS</span>
-                    </>
-                  ) : (
-                    <span className="price-included">Incluso</span>
-                  )}
-                </div>
-              </div>
-            )) : null}
+              );
+            }) : null}
           </div>
         </Reveal>
         
@@ -445,17 +513,16 @@ function OfferSection() {
 
 function GuaranteeSection() {
   return (
-    <section className="section-pad guarantee-section">
+    <section className="section-pad guarantee-section" id="garantia">
       <div className="container">
-        <Reveal className="guarantee-card">
-          <div className="guarantee-seal">
-            <ShieldCheck className="h-9 w-9" />
-            <span>7 dias</span>
+        <Reveal className="guarantee-box">
+          <div className="guarantee-icon-wrap">
+            <Shield className="h-14 w-14 guarantee-icon" />
           </div>
-          <div>
-            <p className="eyebrow">Garantia e segurança</p>
+          <div className="guarantee-content">
+            <span className="guarantee-badge">Garantia Incondicional</span>
             <h2>{guarantee.title}</h2>
-            <p>{guarantee.text}</p>
+            <p className="guarantee-text">{guarantee.text}</p>
           </div>
         </Reveal>
       </div>
@@ -535,9 +602,18 @@ function Footer() {
             </PrimaryButton>
           </div>
           <div className="footer-badges-list">
-            <span>🛡️ Garantia de 7 dias</span>
-            <span>⚡ Acesso imediato</span>
-            <span>🎥 Aulas gravadas</span>
+            <span>
+              <Shield className="h-4 w-4" />
+              Garantia de 7 dias
+            </span>
+            <span>
+              <Zap className="h-4 w-4" />
+              Acesso imediato
+            </span>
+            <span>
+              <Play className="h-4 w-4" />
+              Aulas gravadas
+            </span>
           </div>
         </div>
 
