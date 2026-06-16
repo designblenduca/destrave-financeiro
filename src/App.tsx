@@ -84,17 +84,22 @@ function PrimaryButton({
   checkout?: boolean;
 }) {
   const className = "primary-button group";
+  const isAnchor = href?.startsWith("#");
 
   if (href) {
     return (
       <a
         className={className}
         href={href}
-        rel="noreferrer"
+        rel={checkout ? "noreferrer" : undefined}
         target={checkout ? "_blank" : undefined}
       >
         <span>{children}</span>
-        <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+        {isAnchor ? (
+          <ArrowDown className="h-5 w-5 transition-transform group-hover:translate-y-1" />
+        ) : (
+          <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+        )}
       </a>
     );
   }
@@ -126,7 +131,7 @@ function Hero() {
 
         <p className="hero-subtitle">{hero.subheadline}</p>
 
-        <PrimaryButton checkout href={checkoutUrl}>
+        <PrimaryButton href="#oferta">
           {hero.cta}
         </PrimaryButton>
       </Reveal>
@@ -251,7 +256,7 @@ function FitSection() {
           </Reveal>
         </div>
         <Reveal className="fit-actions" delay={0.12}>
-          <PrimaryButton checkout href={checkoutUrl}>
+          <PrimaryButton href="#oferta">
             QUERO DESTRAVAR MINHA EMPRESA AGORA
           </PrimaryButton>
         </Reveal>
@@ -266,7 +271,7 @@ function LuanaSection() {
     "Especialista em Educação Financeira",
     "Especialista em Finanças Comportamentais",
     "Especialista em Banking",
-    "Coautora da obra “Quais de Mim Você Procura”",
+    'Coautora da obra “Quais de Mim Você Procura”',
   ];
 
   return (
@@ -298,7 +303,7 @@ function LuanaSection() {
 
           <Reveal className="luana-quote-strip">
             <Quote className="quote-icon" strokeWidth={1.6} />
-            <p>“Conhecimento liberta e transforma!”</p>
+            <p>"Conhecimento liberta e transforma!"</p>
           </Reveal>
         </div>
       </div>
@@ -313,7 +318,7 @@ function TestimonialsSection() {
         <SectionHeader
           align="center"
           eyebrow="Prova social"
-          title="O que dizem os empresários que já destravaram:"
+          title="O que dizem quem já destravou:"
         />
         <div className="testimonial-clean-grid">
           {testimonials.map((testimonial, index) => (
@@ -322,8 +327,8 @@ function TestimonialsSection() {
               delay={index * 0.08}
               key={testimonial.name}
             >
-              <h3 className="testimonial-phrase">“{testimonial.phrase}”</h3>
-              <p className="testimonial-quote">“{testimonial.quote}”</p>
+              <h3 className="testimonial-phrase">"{testimonial.phrase}"</h3>
+              <p className="testimonial-quote">"{testimonial.quote}"</p>
               <div className="testimonial-author">
                 <strong>{testimonial.name}</strong>
                 <span>{testimonial.label}</span>
@@ -331,6 +336,50 @@ function TestimonialsSection() {
             </Reveal>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+function ValueStackSection() {
+  return (
+    <section className="section-pad value-stack-section">
+      <div className="container value-stack-container">
+        <Reveal className="value-stack-header">
+          <p className="eyebrow">Incluso na oferta</p>
+          <h2>Tudo que você leva hoje:</h2>
+        </Reveal>
+
+        <Reveal className="value-stack-table" delay={0.08}>
+          {offer.valueStack.map((item, index) => (
+            <div className="value-stack-row" key={item.title}>
+              <span className="value-stack-num">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <p className="value-stack-item-title">{item.title}</p>
+              <span className="value-stack-price">{item.originalPrice}</span>
+            </div>
+          ))}
+
+          <div className="value-stack-divider">
+            <span className="value-stack-total-label">Valor total</span>
+            <span className="value-stack-total-original">
+              {offer.totalOriginalValue}
+            </span>
+          </div>
+
+          <div className="value-stack-offer">
+            <span className="value-stack-offer-label">Oferta única</span>
+            <span className="value-stack-offer-price">R$ 97</span>
+          </div>
+        </Reveal>
+
+        <Reveal className="value-stack-cta" delay={0.16}>
+          <PrimaryButton href="#oferta">QUERO GARANTIR AGORA</PrimaryButton>
+          <p className="value-stack-savings">
+            Você economiza R$ 393 — mais de 80% de desconto
+          </p>
+        </Reveal>
       </div>
     </section>
   );
@@ -356,7 +405,7 @@ function OfferSection() {
                   <p>{item.subtitle}</p>
                 </div>
                 <div className="invoice-row-price">
-                  <span>{item.isBonus ? "Incluso" : "Principal"}</span>
+                  <span>{item.originalPrice}</span>
                 </div>
               </div>
             ))}
@@ -480,7 +529,7 @@ function Footer() {
             financeiro da sua empresa com clareza, estratégia e lucro.
           </p>
           <div className="footer-cta-wrap">
-            <PrimaryButton checkout href={checkoutUrl}>
+            <PrimaryButton href="#oferta">
               QUERO DESTRAVAR MEU LUCRO AGORA
             </PrimaryButton>
           </div>
@@ -524,6 +573,7 @@ export default function App() {
       <FitSection />
       <LuanaSection />
       <TestimonialsSection />
+      <ValueStackSection />
       <OfferSection />
       <GuaranteeSection />
       <FaqSection />

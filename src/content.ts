@@ -28,7 +28,8 @@ export const hero = {
 };
 
 export const pain = {
-  intro: "Você construiu sua empresa, conquistou clientes e o dinheiro está entrando.",
+  intro:
+    "Você construiu uma empresa, conquistou clientes. O dinheiro está entrando.",
   lead: "Mas, no fundo, você se sente perdida:",
   bullets: [
     "Não sabe exatamente para onde o dinheiro vai.",
@@ -36,39 +37,39 @@ export const pain = {
     "Não faz ideia se o mês fechou com lucro ou prejuízo real.",
   ],
   closing:
-    "Para quem tem talento, a desorganização financeira não é apenas um detalhe, é o gargalo estratégico que segura o seu crescimento e rouba o seu sono.",
+    "Para quem tem talento, a desorganização financeira não é apenas um detalhe — é o gargalo que trava o seu crescimento.",
   bridge:
-    "Sua empresa cresceu, mas o seu controle ficou para trás? O Destrave Financeiro é o treinamento direto ao ponto para quem faturar como empresa, mas ainda opera no amadorismo.",
+    "Seu negócio cresceu. Mas o controle financeiro ficou para trás. O Destrave Financeiro é o treinamento direto ao ponto para quem fatura como empresa e ainda opera no amadorismo.",
 };
 
 export const testimonials = [
   {
     name: "Fernanda Ciello",
     label: "Aluna Destrave",
-    phrase: "Finanças de forma leve e com clareza imediata",
+    phrase: "Clareza sobre minhas finanças que eu nunca tive antes",
     quote:
-      "Eu nunca tinha feito uma aula sobre finanças tão leve. Sempre tive dificuldades de olhar para o financeiro por ter um perfil impulsivo, mas as ferramentas me trouxeram clareza sobre o meu momento atual. Super recomendo o trabalho, pois vai muito além dos números.",
+      "A aula me trouxe uma clareza que eu nunca tive sobre minhas finanças. Pela primeira vez consegui enxergar meus padrões, organizar melhor minhas decisões e entender que o problema vai muito além dos números.",
   },
   {
     name: "Silmara Xavier",
     label: "Aluna Destrave",
-    phrase: "Um divisor de águas para o crescimento da empresa",
+    phrase: "Crescimento real exige organização financeira",
     quote:
-      "Entendi que não existe crescimento real sem controle financeiro. Essa aula foi um divisor de águas e me provou que finanças não são apenas números, mas sim consciência e visão de futuro. Tive uma mudança de mentalidade: prosperidade é gestão, disciplina e decisão.",
+      "Percebi que crescimento real não acontece sem organização financeira. A experiência me mostrou que prosperidade não é sorte — é resultado de clareza, disciplina e decisão.",
   },
   {
     name: "Priscilla Ayres",
     label: "Aluna Destrave",
-    phrase: "Conteúdo prático, sem termos difíceis e com resultados",
+    phrase: "A primeira vez que aprendi finanças de forma leve e com resultados",
     quote:
-      "Foi a primeira vez que ouvi sobre finanças de forma tão leve, clara e objetiva, sem termos difíceis. Amei as planilhas e o suporte recebido. Já coloquei a organização em prática e a diferença para entender as contas e visualizar metas é notória.",
+      "Foi a primeira vez que aprendi sobre finanças de forma leve, objetiva e sem complicações. Já comecei a aplicar o conteúdo e consigo perceber mudanças reais na minha organização financeira.",
   },
   {
     name: "Ian Paz",
     label: "Aluno Destrave",
-    phrase: "Uma relação mais saudável com o dinheiro e escolhas conscientes",
+    phrase: "Uma relação mais consciente com as minhas próprias escolhas",
     quote:
-      "Compreendi que organizar o dinheiro vai além de planilhas, trata-se de uma relação psicológica mais saudável. Percebi que o problema não se resolve apenas ganhando mais, mas sim olhando com consciência para o que temos, entendendo nossos padrões e tomando decisões com clareza.",
+      "Compreendi que organizar o dinheiro não é apenas uma questão de planilhas. É desenvolver uma relação mais consciente com as próprias escolhas e tomar decisões com mais clareza.",
   },
 ];
 
@@ -124,67 +125,65 @@ export const luana = {
   highlights: [
     {
       title: "Experiência",
-      description: "Nos últimos 5 anos, conduziu mais de 250 mentorias e processos de consultoria financeira.",
+      description:
+        "Nos últimos 5 anos, conduziu mais de 250 mentorias e processos de consultoria financeira.",
     },
     {
       title: "Especializações",
-      description: "Especialista em Educação Financeira, Finanças Comportamentais e Banking.",
+      description:
+        "Especialista em Educação Financeira, Finanças Comportamentais e Banking.",
     },
     {
       title: "Resultados",
-      description: "Ajudou centenas de profissionais e empresários a deixarem o modo sobrevivência para trás.",
+      description:
+        "Ajudou centenas de profissionais e empresários a deixarem o modo sobrevivência para trás.",
     },
     {
       title: "Obra Publicada",
-      description: "Coautora da obra Quais de Mim Você Procura (Mulheres nas Finanças).",
+      description:
+        "Coautora da obra Quais de Mim Você Procura (Mulheres nas Finanças).",
     },
   ],
 };
 
 export const offer = {
   title: "Assuma o controle do seu negócio hoje.",
-  priceEyebrow: "Hoje você investe apenas:",
-  installment: "12x de R$ XX,XX",
-  cash: "ou R$ XXX,00 à vista",
+  priceEyebrow: "Investimento único:",
+  installment: "R$ 97",
+  cash: "Acesso imediato e completo",
   cta: "QUERO COMEÇAR AGORA",
   valueStack: [
     {
-      title: "Curso Destrave Financeiro para Empresas",
+      title: "Metodologia Destrave Financeiro para Empresas",
       subtitle: "O método completo para organizar o financeiro do seu CNPJ.",
       originalPrice: "R$ 197",
       isBonus: false,
     },
     {
-      title: "Metodologia Destrave Financeiro para Empresas",
-      subtitle: "Apostila digital detalhada com o método passo a passo.",
-      originalPrice: "R$ 197",
-      isBonus: true,
-    },
-    {
-      title: "Planilha de Acompanhamento Financeiro",
+      title: "Planilhas para Controle Financeiro PF e PJ",
       subtitle: "A ferramenta pronta para controle de caixa e visualização de lucros.",
-      originalPrice: "R$ 37",
+      originalPrice: "R$ 129",
       isBonus: true,
     },
     {
-      title: "Calculadora de Pró-Labore",
-      subtitle: "Para definir seu salário ideal sem drenar o caixa da empresa.",
-      originalPrice: "R$ 37",
+      title: "Aula Bônus: Análise Estratégica",
+      subtitle: "Como tomar decisões financeiras com clareza e dados concretos.",
+      originalPrice: "R$ 97",
       isBonus: true,
     },
     {
-      title: "Checklist da Rotina Financeira Lucrativa",
+      title: "Checklist Financeiro",
       subtitle: "O passo a passo diário, semanal e mensal para manter a organização.",
-      originalPrice: "R$ 37",
+      originalPrice: "R$ 67",
       isBonus: true,
     },
   ],
-  totalOriginalValue: "R$ 308",
+  totalOriginalValue: "R$ 490",
 };
 
 export const guarantee = {
   title: "Risco Zero para você.",
-  text: "Garantia Incondicional de 7 dias. Eu confio tanto no método que te dou uma semana inteira para testar. Se você assistir às aulas e sentir que não é para você, basta solicitar o reembolso e devolvemos 100% do seu investimento. Sem burocracia.",
+  text: "Eu confio tanto no método que te dou 7 dias para testar. Se você não sentir que é para você, basta solicitar o reembolso. Devolvemos 100% do seu investimento, sem burocracia.",
 };
 
 export const faqs = [
@@ -195,7 +194,7 @@ export const faqs = [
   },
   {
     question: "Por quanto tempo tenho acesso?",
-    answer: "O acesso é por [1 ano / vitalício], incluindo todas as atualizações.",
+    answer: "O acesso é por 1 ano, incluindo todas as atualizações.",
   },
   {
     question: "Serve para MEI?",

@@ -1202,3 +1202,145 @@ footer {
     padding-inline: 1rem;
   }
 }
+
+/* ─── VALUE STACK SECTION ─── */
+
+.value-stack-section {
+  background: var(--brand-paper);
+  border-top: 1px solid var(--line-dark);
+}
+
+.value-stack-container {
+  max-width: 680px;
+}
+
+.value-stack-header {
+  max-width: 520px;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.value-stack-table {
+  border-top: 1px solid var(--line-dark);
+}
+
+.value-stack-row {
+  display: grid;
+  grid-template-columns: 3rem 1fr auto;
+  gap: 0.4rem 1rem;
+  align-items: center;
+  border-bottom: 1px solid var(--line-dark);
+  padding-block: 1.1rem;
+}
+
+.value-stack-num {
+  color: var(--brand-primary);
+  font-family: Fraunces, Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1;
+  align-self: start;
+  padding-top: 0.1rem;
+}
+
+.value-stack-item-title {
+  margin: 0;
+  color: var(--brand-dark);
+  font-size: clamp(0.94rem, 1.4vw, 1.02rem);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.value-stack-price {
+  color: var(--brand-text);
+  font-size: 0.92rem;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0.45;
+  text-decoration: line-through;
+  align-self: start;
+  padding-top: 0.15rem;
+}
+
+.value-stack-divider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.1rem;
+  border-bottom: 2px solid var(--line-dark);
+}
+
+.value-stack-total-label {
+  color: var(--brand-text);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.value-stack-total-original {
+  color: var(--brand-text);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.value-stack-offer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.4rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.value-stack-offer-label {
+  color: var(--brand-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.value-stack-offer-price {
+  color: var(--brand-dark);
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.value-stack-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.value-stack-savings {
+  margin: 0;
+  color: var(--brand-primary);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .value-stack-row {
+    grid-template-columns: 2.4rem 1fr;
+    gap: 0.3rem 0.75rem;
+  }
+
+  .value-stack-price {
+    grid-column: 2;
+    padding-top: 0;
+    margin-top: 0.15rem;
+    font-size: 0.82rem;
+  }
+
+  .value-stack-cta {
+    align-items: stretch;
+  }
+
+  .value-stack-savings {
+    text-align: center;
+  }
+}
