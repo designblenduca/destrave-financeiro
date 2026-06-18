@@ -23,7 +23,7 @@ import {
   offer,
   pain,
   pillars,
-  testimonials,
+  testimonialScreenshots,
 } from "./content";
 
 type RevealProps = {
@@ -320,19 +320,21 @@ function TestimonialsSection() {
           eyebrow="Prova social"
           title="O que dizem quem já destravou:"
         />
-        <div className="testimonial-clean-grid">
-          {testimonials.map((testimonial, index) => (
+        <div className="testimonial-screenshots-grid">
+          {testimonialScreenshots.map((t, index) => (
             <Reveal
-              className="testimonial-clean-item"
+              className="testimonial-screenshot-card"
               delay={index * 0.08}
-              key={testimonial.name}
+              key={t.name}
             >
-              <h3 className="testimonial-phrase">"{testimonial.phrase}"</h3>
-              <p className="testimonial-quote">"{testimonial.quote}"</p>
-              <div className="testimonial-author">
-                <strong>{testimonial.name}</strong>
-                <span>{testimonial.label}</span>
-              </div>
+              {t.files.map((file) => (
+                <img
+                  key={file}
+                  src={`${import.meta.env.BASE_URL}${file}`}
+                  alt={`Depoimento de ${t.name}`}
+                  loading="lazy"
+                />
+              ))}
             </Reveal>
           ))}
         </div>

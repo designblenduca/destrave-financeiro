@@ -42,34 +42,22 @@ export const pain = {
     "Seu negócio cresceu. Mas o controle financeiro ficou para trás. O Destrave Financeiro é o treinamento direto ao ponto para quem fatura como empresa e ainda opera no amadorismo.",
 };
 
-export const testimonials = [
+export const testimonialScreenshots = [
   {
     name: "Fernanda Ciello",
-    label: "Aluna Destrave",
-    phrase: "Clareza sobre minhas finanças que eu nunca tive antes",
-    quote:
-      "A aula me trouxe uma clareza que eu nunca tive sobre minhas finanças. Pela primeira vez consegui enxergar meus padrões, organizar melhor minhas decisões e entender que o problema vai muito além dos números.",
-  },
-  {
-    name: "Silmara Xavier",
-    label: "Aluna Destrave",
-    phrase: "Crescimento real exige organização financeira",
-    quote:
-      "Percebi que crescimento real não acontece sem organização financeira. A experiência me mostrou que prosperidade não é sorte — é resultado de clareza, disciplina e decisão.",
-  },
-  {
-    name: "Priscilla Ayres",
-    label: "Aluna Destrave",
-    phrase: "A primeira vez que aprendi finanças de forma leve e com resultados",
-    quote:
-      "Foi a primeira vez que aprendi sobre finanças de forma leve, objetiva e sem complicações. Já comecei a aplicar o conteúdo e consigo perceber mudanças reais na minha organização financeira.",
+    files: ["depoimento-fernanda.png"],
   },
   {
     name: "Ian Paz",
-    label: "Aluno Destrave",
-    phrase: "Uma relação mais consciente com as minhas próprias escolhas",
-    quote:
-      "Compreendi que organizar o dinheiro não é apenas uma questão de planilhas. É desenvolver uma relação mais consciente com as próprias escolhas e tomar decisões com mais clareza.",
+    files: ["depoimento-ian.png"],
+  },
+  {
+    name: "Priscilla Ayres",
+    files: ["depoimento-priscilla.png"],
+  },
+  {
+    name: "Silmara Xavier",
+    files: ["depoimento-silmara-1.png", "depoimento-silmara-2.png"],
   },
 ];
 
