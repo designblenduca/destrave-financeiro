@@ -557,9 +557,11 @@ h2 {
 .testimonial-screenshot-card img {
   display: block;
   width: 100%;
+  max-width: 82%;
   height: auto;
   border-radius: 20px;
   box-shadow: 0 2px 24px rgba(16, 32, 28, 0.07);
+  margin-inline: auto;
 }
 
 .testimonial-screenshot-card img + img {
@@ -1160,6 +1162,10 @@ footer {
 
   .offer-assurances {
     display: grid;
+  }
+
+  .testimonial-screenshot-card img {
+    max-width: 62%;
   }
 
   .footer-badges-list {
