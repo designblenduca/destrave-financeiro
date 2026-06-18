@@ -117,6 +117,14 @@ function Hero() {
     <section className="hero" id="top">
       <div className="hero-overlay" aria-hidden="true" />
 
+      <picture className="hero-image" aria-hidden="true">
+        <source
+          media="(max-width: 768px)"
+          srcSet={`${import.meta.env.BASE_URL}hero-mobile.png`}
+        />
+        <img src={`${import.meta.env.BASE_URL}hero-desktop.png`} alt="" />
+      </picture>
+
       <Reveal className="hero-content">
         <img
           className="hero-logo"
@@ -135,14 +143,6 @@ function Hero() {
           {hero.cta}
         </PrimaryButton>
       </Reveal>
-
-      <picture className="hero-image" aria-hidden="true">
-        <source
-          media="(max-width: 768px)"
-          srcSet={`${import.meta.env.BASE_URL}hero-mobile.png`}
-        />
-        <img src={`${import.meta.env.BASE_URL}hero-desktop.png`} alt="" />
-      </picture>
     </section>
   );
 }

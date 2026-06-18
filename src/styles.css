@@ -15,7 +15,7 @@
   --container: min(100% - 2.5rem, 1180px);
   --brand-primary: #2b6c70;
   --brand-secondary: #a5d0d3;
-  --brand-dark: #10201c;
+  --brand-dark: #364153;
   --brand-paper: #fffefb;
   --brand-ink: #243240;
   --brand-text: #4a5565;
@@ -915,6 +915,14 @@ footer {
 }
 
 @media (min-width: 980px) {
+  .hero h1 {
+    color: #364153;
+  }
+
+  .hero-subtitle {
+    color: #364153;
+  }
+
   .editorial-grid,
   .luana-grid,
   .offer-wrap,
@@ -981,21 +989,21 @@ footer {
 @media (max-width: 979px) {
   .hero {
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    min-height: 0;
+    background: var(--brand-secondary);
   }
 
-  .hero-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 2.5rem 2rem clamp(2.4rem, 6vw, 4rem);
+  .hero-overlay {
+    display: none;
   }
 
   .hero-image {
-    inset: 0;
+    position: relative;
+    inset: unset;
     width: 100%;
-    height: 100vh;
+    height: 500px;
+    flex-shrink: 0;
   }
 
   .hero-image img {
@@ -1005,16 +1013,13 @@ footer {
     object-position: center top;
   }
 
-  .hero-overlay {
-    top: auto;
-    bottom: 0;
-    height: min(62vh, 34rem);
-    background: linear-gradient(
-      180deg,
-      rgba(255, 254, 251, 0) 0%,
-      rgba(255, 254, 251, 0.78) 38%,
-      rgba(255, 254, 251, 0.98) 100%
-    );
+  .hero-content {
+    position: relative;
+    bottom: unset;
+    left: unset;
+    width: 100%;
+    background: var(--brand-secondary);
+    padding: 2.5rem 2rem clamp(2.4rem, 6vw, 4rem);
   }
 
   .hero h1 {
@@ -1025,7 +1030,7 @@ footer {
 
   .hero-subtitle {
     max-width: 34rem;
-    color: var(--brand-text);
+    color: var(--brand-dark);
   }
 
   .hero .primary-button {
